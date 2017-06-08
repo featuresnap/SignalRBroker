@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Broker.UnitTests
 {
     [TestFixture]
-    public class Class1
+    public class UnityVerificationTests
     {
         [Test]
         public void Container_ResolveAll_Handles_Type_Never_Registered()

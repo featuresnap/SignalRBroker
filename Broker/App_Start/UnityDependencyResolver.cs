@@ -28,7 +28,13 @@ namespace Broker.App_Start
 
         public override IEnumerable<object> GetServices(Type serviceType)
         {
-            throw new NotImplementedException();
+            var results = new List<object>();
+            if (_container.IsRegistered(serviceType))
+            {
+                results.Add(_container.Resolve(serviceType));
+            }
+            results.AddRange(_container.ResolveAll(serviceType));
+            return results;
         }
 
 
